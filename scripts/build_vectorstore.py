@@ -68,7 +68,7 @@ def build_vectorstore(progress_cb=None):
         print(f"ERROR: {INPUT_FILE} not found. Run step 1 first.")
         sys.exit(1)
 
-    with open(INPUT_FILE, encoding="utf-8") as f:
+    with open(INPUT_FILE, encoding="utf-8", errors="replace") as f:
         transcripts = json.load(f)
 
     print(f"Loaded {len(transcripts)} transcripts")
