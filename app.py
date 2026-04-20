@@ -75,8 +75,10 @@ def init_state():
         "engine_ready": False,
         "api_key_set": False,
         "show_sources": True,
-        "creator_name": "",
+        "creator_name": "Alex Hormozi",
         "creator_style": "",
+        "provider": "anthropic",  # anthropic or groq
+        "groq_api_key": os.environ.get("GROQ_API_KEY", ""),
     }
     for k, v in defaults.items():
         if k not in st.session_state:
@@ -90,9 +92,8 @@ init_state()
 # ---------------------------------------------------------------------------
 
 @st.cache_resource(show_spinner="Loading knowledge base...")
-def load_engine(creator_name: str, creator_style: str, _api_key: str):
+def load_engine(creator_name: str, creator_style: str):
     """Cache the engine so it loads once per session."""
-    os.environ["ANTHROPIC_API_KEY"] = _api_key
     from rag_engine import YTTutorEngine
     engine = YTTutorEngine(creator_name=creator_name, creator_style=creator_style)
     return engine
@@ -106,18 +107,36 @@ with st.sidebar:
     st.title("🎓 YT Tutor Setup")
     st.markdown("---")
 
-    # API Key
-    st.subheader("1. Anthropic API Key")
-    api_key = st.text_input(
-        "API Key",
-        type="password",
-        value=os.environ.get("ANTHROPIC_API_KEY", ""),
-        placeholder="sk-ant-api03-...",
-        help="Get yours at console.anthropic.com",
+    # Provider Selection
+    st.subheader("1. AI Provider")
+    provider = st.radio(
+        "Select Provider",
+        options=["anthropic", "groq"],
+        index=0 if st.session_state.provider == "anthropic" else 1,
+        horizontal=True
     )
-    if api_key:
-        os.environ["ANTHROPIC_API_KEY"] = api_key
-        st.session_state.api_key_set = True
+    st.session_state.provider = provider
+
+    # API Keys
+    if provider == "anthropic":
+        api_key = st.text_input(
+            "Anthropic API Key",
+            type="password",
+            value=os.environ.get("ANTHROPIC_API_KEY", ""),
+            placeholder="sk-ant-...",
+        )
+        if api_key:
+            os.environ["ANTHROPIC_API_KEY"] = api_key
+    else:
+        api_key = st.text_input(
+            "Groq API Key",
+            type="password",
+            value=st.session_state.groq_api_key or os.environ.get("GROQ_API_KEY", ""),
+            placeholder="gsk_...",
+        )
+        if api_key:
+            st.session_state.groq_api_key = api_key
+            os.environ["GROQ_API_KEY"] = api_key
 
     st.markdown("---")
 
@@ -147,22 +166,17 @@ with st.sidebar:
     # Load engine
     st.subheader("3. Knowledge base")
     meta_exists = os.path.exists("data/vectorstore_meta.json")
-    vs_exists = os.path.exists("vectorstore")
+    index_exists = os.path.exists("data/search_index/tfidf_index.joblib")
 
-    if not meta_exists or not vs_exists:
+    if not meta_exists or not index_exists:
         st.warning("No knowledge base found yet.")
-        st.markdown("""
-**Run these scripts first:**
-```bash
-# 1. Extract transcripts
-python scripts/1_extract_transcripts.py \\
-  --channel "https://www.youtube.com/@Handle/videos"
-
-# 2. Build vector database
-python scripts/2_build_vectorstore.py
-```
-Then refresh this page.
-        """)
+        if st.button("🏗 Build Initial Index", use_container_width=True):
+             from scripts.build_vectorstore import build_vectorstore
+             with st.status("Building index...", expanded=True) as status:
+                st.write("Processing transcripts...")
+                build_vectorstore(progress_cb=lambda p, m: st.write(m))
+                status.update(label="Index built!", state="complete", expanded=False)
+                st.rerun()
     else:
         with open("data/vectorstore_meta.json") as f:
             meta = json.load(f)
@@ -179,19 +193,28 @@ Then refresh this page.
 
         if st.button("🔌 Load / Reload Tutor", use_container_width=True, type="primary"):
             if not api_key:
-                st.error("Enter your Anthropic API key first.")
+                st.error("Enter your API key first.")
             elif not creator_name:
                 st.error("Enter the creator's name.")
             else:
                 with st.spinner("Loading..."):
                     try:
                         st.session_state.engine = load_engine(
-                            creator_name, creator_style, api_key
+                            creator_name, creator_style
                         )
                         st.session_state.engine_ready = True
                         st.success("Tutor ready!")
                     except Exception as e:
                         st.error(f"Failed to load: {e}")
+
+        if st.button("🔄 Re-build Search Index", use_container_width=True):
+            from scripts.build_vectorstore import build_vectorstore
+            with st.status("Re-indexing...", expanded=True) as status:
+                st.write("Loading transcripts...")
+                build_vectorstore(progress_cb=lambda p, m: st.write(m))
+                status.update(label="Index updated!", state="complete", expanded=False)
+                st.session_state.engine = None # Force reload
+                st.rerun()
 
     st.markdown("---")
 
@@ -302,12 +325,16 @@ else:
                 # Build history without the current message (last item)
                 history = st.session_state.chat_history[:-1]
 
-                sources, stream_ctx = engine.ask_stream(prompt, chat_history=history)
+                sources, generator = engine.ask_stream(
+                    prompt, 
+                    chat_history=history,
+                    provider=st.session_state.provider,
+                    api_key=api_key
+                )
 
-                with stream_ctx as stream:
-                    for text in stream.text_stream:
-                        full_response += text
-                        message_placeholder.markdown(full_response + "▌")
+                for chunk in generator:
+                    full_response += chunk
+                    message_placeholder.markdown(full_response + "▌")
 
                 message_placeholder.markdown(full_response)
 

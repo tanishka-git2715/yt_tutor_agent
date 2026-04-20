@@ -1,0 +1,259 @@
+{
+  "total_videos": 50,
+  "total_chunks": 1301,
+  "method": "tfidf",
+  "chunk_size": 400,
+  "chunk_overlap": 60,
+  "videos": [
+    {
+      "video_id": "hHkdbr6_JJs",
+      "title": "How Acquisition.com Makes Money",
+      "url": "https://www.youtube.com/watch?v=hHkdbr6_JJs"
+    },
+    {
+      "video_id": "HGZOxBfnF-E",
+      "title": "Building a $1,000,000 Business for a Stranger in 26 Minutes",
+      "url": "https://www.youtube.com/watch?v=HGZOxBfnF-E"
+    },
+    {
+      "video_id": "Q8xXSMe8E4Q",
+      "title": "Reacting to My First Videos 10 Years Later",
+      "url": "https://www.youtube.com/watch?v=Q8xXSMe8E4Q"
+    },
+    {
+      "video_id": "yb2cLMMuMdQ",
+      "title": "How to make progress faster than everyone",
+      "url": "https://www.youtube.com/watch?v=yb2cLMMuMdQ"
+    },
+    {
+      "video_id": "BYpTRiRqS1Y",
+      "title": "Helping 4 Educational Business Owners Build a $1M Business in 25 Minutes",
+      "url": "https://www.youtube.com/watch?v=BYpTRiRqS1Y"
+    },
+    {
+      "video_id": "9q5ojtkqsBs",
+      "title": "How to Win With AI in 2026",
+      "url": "https://www.youtube.com/watch?v=9q5ojtkqsBs"
+    },
+    {
+      "video_id": "8C_6qojTA78",
+      "title": "Helping E-Commerce Business Owners Scale",
+      "url": "https://www.youtube.com/watch?v=8C_6qojTA78"
+    },
+    {
+      "video_id": "-j8_YCWZ05Q",
+      "title": "How to Get Your Customers to Stay FOREVER",
+      "url": "https://www.youtube.com/watch?v=-j8_YCWZ05Q"
+    },
+    {
+      "video_id": "jqo0lVveh98",
+      "title": "Watch This If You Have a Service Business",
+      "url": "https://www.youtube.com/watch?v=jqo0lVveh98"
+    },
+    {
+      "video_id": "Jmkq5RLjm0U",
+      "title": "If I Wanted To Grow An Audience In 2026, I'd Do This",
+      "url": "https://www.youtube.com/watch?v=Jmkq5RLjm0U"
+    },
+    {
+      "video_id": "rMJIOK_FgJk",
+      "title": "The 6 Levels of Making Money",
+      "url": "https://www.youtube.com/watch?v=rMJIOK_FgJk"
+    },
+    {
+      "video_id": "jfW6gL6hKhk",
+      "title": "If I Wanted to Make My First $100K in 2026, I\u2019d Do This",
+      "url": "https://www.youtube.com/watch?v=jfW6gL6hKhk"
+    },
+    {
+      "video_id": "MH-IMJxbUY4",
+      "title": "Building a $12,000,000 Business for a Stranger in 25 Minutes",
+      "url": "https://www.youtube.com/watch?v=MH-IMJxbUY4"
+    },
+    {
+      "video_id": "ZuJryiwxjDw",
+      "title": "Why you aren't making as much money as you want",
+      "url": "https://www.youtube.com/watch?v=ZuJryiwxjDw"
+    },
+    {
+      "video_id": "_KlZoPxbStk",
+      "title": "It took me 36 years to realize what I\u2019ll tell you in 26 minutes\u2026",
+      "url": "https://www.youtube.com/watch?v=_KlZoPxbStk"
+    },
+    {
+      "video_id": "6BQ3whjWG3M",
+      "title": "How the Top 1% Actually Think About Money",
+      "url": "https://www.youtube.com/watch?v=6BQ3whjWG3M"
+    },
+    {
+      "video_id": "A248pGXTSoY",
+      "title": "Why Ambitious People Stay Mediocre",
+      "url": "https://www.youtube.com/watch?v=A248pGXTSoY"
+    },
+    {
+      "video_id": "N5MExtki_VI",
+      "title": "If I Wanted To Scale A Service Business In 2026, Here's What I'd Do",
+      "url": "https://www.youtube.com/watch?v=N5MExtki_VI"
+    },
+    {
+      "video_id": "MZPVPCIeUpg",
+      "title": "How to Change Your Life",
+      "url": "https://www.youtube.com/watch?v=MZPVPCIeUpg"
+    },
+    {
+      "video_id": "qsXxckCbci0",
+      "title": "How To Grow ANY Business FASTER (Masterclass)",
+      "url": "https://www.youtube.com/watch?v=qsXxckCbci0"
+    },
+    {
+      "video_id": "A_tx40lNpf8",
+      "title": "The Mathematics of Business, Explained",
+      "url": "https://www.youtube.com/watch?v=A_tx40lNpf8"
+    },
+    {
+      "video_id": "u3H7CfpfwHQ",
+      "title": "We Broke The Guinness World Record In 24 Hours",
+      "url": "https://www.youtube.com/watch?v=u3H7CfpfwHQ"
+    },
+    {
+      "video_id": "vhOV_Od0A3M",
+      "title": "If you want 2026 to be the best year of your life, please watch this video...",
+      "url": "https://www.youtube.com/watch?v=vhOV_Od0A3M"
+    },
+    {
+      "video_id": "YONIUpk-kAs",
+      "title": "26 Harsh Lessons I Learned in 2025",
+      "url": "https://www.youtube.com/watch?v=YONIUpk-kAs"
+    },
+    {
+      "video_id": "q9qBqnhdWKw",
+      "title": "how to outlearn everyone",
+      "url": "https://www.youtube.com/watch?v=q9qBqnhdWKw"
+    },
+    {
+      "video_id": "UDBkiBnMrHs",
+      "title": "If you\u2019re ambitious but inconsistent, please watch this",
+      "url": "https://www.youtube.com/watch?v=UDBkiBnMrHs"
+    },
+    {
+      "video_id": "uWdIgftpvBI",
+      "title": "If I Started A Business in 2026, I'd Do This",
+      "url": "https://www.youtube.com/watch?v=uWdIgftpvBI"
+    },
+    {
+      "video_id": "spXH1kJ6q-Q",
+      "title": "Watch This To Get Ahead In 2026",
+      "url": "https://www.youtube.com/watch?v=spXH1kJ6q-Q"
+    },
+    {
+      "video_id": "SE9_1PYsaP0",
+      "title": "Build a Mind So Strong It Scares People",
+      "url": "https://www.youtube.com/watch?v=SE9_1PYsaP0"
+    },
+    {
+      "video_id": "XGm2ERU9qtA",
+      "title": "15 Brutal Truths I Know at 36 That I Wish I Knew at 20",
+      "url": "https://www.youtube.com/watch?v=XGm2ERU9qtA"
+    },
+    {
+      "video_id": "sGakuNs9mT4",
+      "title": "How to Speak So Well People Give You Money",
+      "url": "https://www.youtube.com/watch?v=sGakuNs9mT4"
+    },
+    {
+      "video_id": "Mst4hreQYl0",
+      "title": "Watch This To Generate 1000s of Leads (In Any Niche)",
+      "url": "https://www.youtube.com/watch?v=Mst4hreQYl0"
+    },
+    {
+      "video_id": "mr4Pw66_490",
+      "title": "If I Wanted to Create a Business That Runs Itself, Here's What I'd Do",
+      "url": "https://www.youtube.com/watch?v=mr4Pw66_490"
+    },
+    {
+      "video_id": "0lMn_-EXyhQ",
+      "title": "If You're in Your 20s or 30s, Here's How to Win (at Anything)",
+      "url": "https://www.youtube.com/watch?v=0lMn_-EXyhQ"
+    },
+    {
+      "video_id": "hnmBXTyMFKI",
+      "title": "You can make way more money than you think",
+      "url": "https://www.youtube.com/watch?v=hnmBXTyMFKI"
+    },
+    {
+      "video_id": "WOZGZK7K-Jo",
+      "title": "how to force yourself to be consistent and do hard things",
+      "url": "https://www.youtube.com/watch?v=WOZGZK7K-Jo"
+    },
+    {
+      "video_id": "dMZ-n2KSlxE",
+      "title": "My Actual Social Media Strategy For 2026",
+      "url": "https://www.youtube.com/watch?v=dMZ-n2KSlxE"
+    },
+    {
+      "video_id": "Wr6n_zNKvMk",
+      "title": "Building a $1,000,000 Business for a Stranger in 69 Minutes",
+      "url": "https://www.youtube.com/watch?v=Wr6n_zNKvMk"
+    },
+    {
+      "video_id": "Avp3xh3Y1Ic",
+      "title": "If You Have a Hard Life, Watch This",
+      "url": "https://www.youtube.com/watch?v=Avp3xh3Y1Ic"
+    },
+    {
+      "video_id": "3SVksBB3_YY",
+      "title": "Give me 20 Minutes and I'll Give You Back 20 Years of Your Life",
+      "url": "https://www.youtube.com/watch?v=3SVksBB3_YY"
+    },
+    {
+      "video_id": "q_4P7FOFEEI",
+      "title": "If you're watching this, we did it.",
+      "url": "https://www.youtube.com/watch?v=q_4P7FOFEEI"
+    },
+    {
+      "video_id": "tGhe3sBuk34",
+      "title": "My final update",
+      "url": "https://www.youtube.com/watch?v=tGhe3sBuk34"
+    },
+    {
+      "video_id": "c6wfunUDDOs",
+      "title": "$100M Money Models Rick Roll",
+      "url": "https://www.youtube.com/watch?v=c6wfunUDDOs"
+    },
+    {
+      "video_id": "prj1bnTAM8A",
+      "title": "Your biggest advantage is no one knows who you are",
+      "url": "https://www.youtube.com/watch?v=prj1bnTAM8A"
+    },
+    {
+      "video_id": "3yAiVjcImQ4",
+      "title": "I Blew Up a Business Through 3 Small Changes (Just Copy Me)",
+      "url": "https://www.youtube.com/watch?v=3yAiVjcImQ4"
+    },
+    {
+      "video_id": "XwzU4RikbGs",
+      "title": "You're Setting Goals Wrong",
+      "url": "https://www.youtube.com/watch?v=XwzU4RikbGs"
+    },
+    {
+      "video_id": "nSQdjim8CsE",
+      "title": "Making Money is a Game (Here's the Cheat Code)",
+      "url": "https://www.youtube.com/watch?v=nSQdjim8CsE"
+    },
+    {
+      "video_id": "DaRXece2ItE",
+      "title": "Copy This Strategy, It'll Blow Up Your Business",
+      "url": "https://www.youtube.com/watch?v=DaRXece2ItE"
+    },
+    {
+      "video_id": "zgYQT-fdLL4",
+      "title": "My biggest announcement ever\u2026",
+      "url": "https://www.youtube.com/watch?v=zgYQT-fdLL4"
+    },
+    {
+      "video_id": "ub1D6RQocRU",
+      "title": "If you're ambitious and in your 20s or 30s, please watch this.",
+      "url": "https://www.youtube.com/watch?v=ub1D6RQocRU"
+    }
+  ]
+}

@@ -28,6 +28,7 @@ import yt_dlp  # noqa: E402
 
 OUTPUT_FILE = "data/transcripts_raw.json"
 os.makedirs("data", exist_ok=True)
+os.makedirs("data/tmp", exist_ok=True)
 
 
 def clean_text(text: str) -> str:
@@ -72,7 +73,7 @@ def fetch_transcript_for_video(video_id: str) -> str | None:
         "writeautomaticsub": True,
         "subtitleslangs": ["en", "en-US", "en-GB"],
         "subtitlesformat": "json3",
-        "outtmpl": f"/tmp/yt_sub_{video_id}.%(ext)s",
+        "outtmpl": f"data/tmp/yt_sub_{video_id}.%(ext)s",
         "ignoreerrors": True,
     }
 
@@ -82,9 +83,9 @@ def fetch_transcript_for_video(video_id: str) -> str | None:
     # Find the downloaded subtitle file
     for lang in ["en", "en-US", "en-GB"]:
         for kind in ["", ".auto"]:
-            filepath = f"/tmp/yt_sub_{video_id}{kind}.{lang}.json3"
+            filepath = f"data/tmp/yt_sub_{video_id}{kind}.{lang}.json3"
             # yt-dlp names files differently across versions — try both patterns
-            alt_path = f"/tmp/yt_sub_{video_id}.{lang}.json3"
+            alt_path = f"data/tmp/yt_sub_{video_id}.{lang}.json3"
             for path in [filepath, alt_path]:
                 if os.path.exists(path):
                     text = parse_json3(path)

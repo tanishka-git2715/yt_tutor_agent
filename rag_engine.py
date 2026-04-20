@@ -20,14 +20,16 @@ from typing import Generator
 # Configuration
 # ---------------------------------------------------------------------------
 
-VECTORSTORE_DIR = "vectorstore"
+VECTORSTORE_DIR = "data/search_index"
 META_FILE = "data/vectorstore_meta.json"
-EMBED_MODEL = "all-MiniLM-L6-v2"
-TOP_K = 8               # number of chunks to retrieve
-CLAUDE_MODEL = "claude-sonnet-4-20250514"
+INDEX_FILE = "data/search_index/tfidf_index.joblib"
+TOP_K = 6               # number of chunks to retrieve
+CLAUDE_MODEL = "claude-3-5-sonnet-20240620"
 MAX_TOKENS = 1500
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+DEFAULT_GROQ_MODEL = "llama-3.3-70b-versatile"
 
 
 # ---------------------------------------------------------------------------
@@ -62,6 +64,8 @@ class YTTutorEngine:
         self._embed_model = None
         self._meta = None
         self._anthropic = None
+        self._groq = None
+        self.provider = "anthropic" # default
 
     # ------------------------------------------------------------------
     # Lazy loaders
@@ -78,58 +82,34 @@ class YTTutorEngine:
                 self._meta = json.load(f)
         return self._meta
 
-    def _load_collection(self):
+    def _load_search_index(self):
         if self._collection is None:
-            try:
-                import chromadb
-            except ImportError:
-                os.system(f"{sys.executable} -m pip install chromadb -q")
-                import chromadb
-
-            if not os.path.exists(VECTORSTORE_DIR):
+            import joblib
+            if not os.path.exists(INDEX_FILE):
                 raise FileNotFoundError(
-                    f"Vector store not found at: {VECTORSTORE_DIR}\n"
+                    f"Search index not found at: {INDEX_FILE}\n"
                     "Run scripts/2_build_vectorstore.py first."
                 )
-            client = chromadb.PersistentClient(path=VECTORSTORE_DIR)
-            self._collection = client.get_collection("yt_transcripts")
+            self._collection = joblib.load(INDEX_FILE) # This will be our dict {vectorizer, matrix, chunks}
         return self._collection
 
-    def _load_embed_model(self):
-        """Uses HuggingFace Inference API for embeddings."""
-        from huggingface_hub import InferenceClient
-        client = InferenceClient(token=os.environ.get("HF_TOKEN"))
-        
-        def hf_embed(texts: list[str]) -> list[list[float]]:
-            # InferenceClient.feature_extraction returns a numpy-like list of floats
-            # for the given model. It handles partitioning/retries.
-            embeddings = client.feature_extraction(
-                texts, 
-                model="sentence-transformers/all-MiniLM-L6-v2"
-            )
-            # Ensure it is a list of lists
-            if isinstance(embeddings, list) and not isinstance(embeddings[0], list):
-                return [embeddings]
-            return embeddings.tolist() if hasattr(embeddings, 'tolist') else embeddings
-            
-        self._embed_model = hf_embed
-        return self._embed_model
-
-    def _load_anthropic(self):
+    def _load_anthropic(self, api_key: str | None = None):
         if self._anthropic is None:
-            try:
-                import anthropic
-            except ImportError:
-                os.system(f"{sys.executable} -m pip install anthropic -q")
-                import anthropic
-            key = ANTHROPIC_API_KEY or os.environ.get("ANTHROPIC_API_KEY", "")
+            import anthropic
+            key = api_key or ANTHROPIC_API_KEY or os.environ.get("ANTHROPIC_API_KEY", "")
             if not key:
-                raise ValueError(
-                    "ANTHROPIC_API_KEY not set.\n"
-                    "Set it with:  export ANTHROPIC_API_KEY=sk-ant-..."
-                )
+                raise ValueError("ANTHROPIC_API_KEY not set.")
             self._anthropic = anthropic.Anthropic(api_key=key)
         return self._anthropic
+
+    def _load_groq(self, api_key: str | None = None):
+        if self._groq is None:
+            from groq import Groq
+            key = api_key or GROQ_API_KEY or os.environ.get("GROQ_API_KEY", "")
+            if not key:
+                raise ValueError("GROQ_API_KEY not set.")
+            self._groq = Groq(api_key=key)
+        return self._groq
 
     # ------------------------------------------------------------------
     # Public
@@ -142,38 +122,42 @@ class YTTutorEngine:
     def is_ready(self) -> bool:
         try:
             self._load_meta()
-            self._load_collection()
+            self._load_search_index()
             return True
         except Exception:
             return False
 
     def retrieve(self, question: str, top_k: int = TOP_K) -> list[SourceChunk]:
-        """Find the most relevant transcript chunks for a question."""
-        collection = self._load_collection()
-        model = self._load_embed_model()
+        """Find the most relevant transcript chunks using TF-IDF."""
+        from sklearn.metrics.pairwise import cosine_similarity
         
-        # Call the HF API function we defined in _load_embed_model
-        query_embedding = model([question])
+        index = self._load_search_index()
+        vectorizer = index["vectorizer"]
+        tfidf_matrix = index["tfidf_matrix"]
+        chunk_data = index["chunks"]
         
-        results = collection.query(
-            query_embeddings=query_embedding,
-            n_results=top_k,
-            include=["documents", "metadatas", "distances"],
-        )
-
+        # Vectorize user question
+        query_vec = vectorizer.transform([question])
+        
+        # Compute similarities
+        similarities = cosine_similarity(query_vec, tfidf_matrix).flatten()
+        
+        # Get top K indices
+        top_indices = similarities.argsort()[-top_k:][::-1]
+        
         chunks = []
-        docs = results["documents"][0]
-        metas = results["metadatas"][0]
-        dists = results["distances"][0]
-
-        for doc, meta, dist in zip(docs, metas, dists):
+        for idx in top_indices:
+            score = similarities[idx]
+            if score < 0.01: continue
+            
+            meta = chunk_data[idx]
             chunks.append(SourceChunk(
                 video_id=meta["video_id"],
                 title=meta["title"],
                 url=meta["url"],
                 chunk_index=meta["chunk_index"],
-                text=doc,
-                score=round(1 - dist, 3),   # cosine similarity
+                text=meta["text"],
+                score=float(score),
             ))
         return chunks
 
@@ -201,38 +185,75 @@ Format:
 - End with: "Source: [Video Title(s)]" so the user knows where the knowledge comes from.
 - For complex topics, break answers into numbered steps or bullet points."""
 
-    def ask(self, question: str, chat_history: list[dict] | None = None) -> TutorResponse:
+    def ask(self, question: str, chat_history: list[dict] | None = None, provider: str = "anthropic", api_key: str | None = None) -> TutorResponse:
         """Single-turn or multi-turn question. Returns full response."""
         chunks = self.retrieve(question)
         context = self._format_context(chunks)
         messages = self._build_messages(question, context, chat_history)
-        client = self._load_anthropic()
+        system_prompt = self.build_system_prompt()
 
-        response = client.messages.create(
-            model=CLAUDE_MODEL,
-            max_tokens=MAX_TOKENS,
-            system=self.build_system_prompt(),
-            messages=messages,
-        )
-        answer = response.content[0].text
+        if provider == "groq":
+            client = self._load_groq(api_key)
+            response = client.chat.completions.create(
+                model=DEFAULT_GROQ_MODEL,
+                messages=[{"role": "system", "content": system_prompt}] + messages,
+                max_tokens=MAX_TOKENS,
+            )
+            answer = response.choices[0].message.content
+        else:
+            client = self._load_anthropic(api_key)
+            response = client.messages.create(
+                model=CLAUDE_MODEL,
+                max_tokens=MAX_TOKENS,
+                system=system_prompt,
+                messages=messages,
+            )
+            answer = response.content[0].text
+            
         return TutorResponse(answer=answer, sources=chunks)
 
     def ask_stream(
-        self, question: str, chat_history: list[dict] | None = None
+        self, question: str, chat_history: list[dict] | None = None, provider: str = "anthropic", api_key: str | None = None
     ) -> tuple[list[SourceChunk], Generator]:
         """Streaming version — yields text tokens. Returns (chunks, generator)."""
         chunks = self.retrieve(question)
         context = self._format_context(chunks)
         messages = self._build_messages(question, context, chat_history)
-        client = self._load_anthropic()
+        system_prompt = self.build_system_prompt()
 
-        stream = client.messages.stream(
-            model=CLAUDE_MODEL,
-            max_tokens=MAX_TOKENS,
-            system=self.build_system_prompt(),
-            messages=messages,
-        )
-        return chunks, stream
+        if provider == "groq":
+            client = self._load_groq(api_key)
+            # Create a wrapper generator to match Claude's stream structure if needed
+            # or just handle the tokens in app.py. 
+            # For simplicity, we'll return the raw groq stream and handle it.
+            stream = client.chat.completions.create(
+                model=DEFAULT_GROQ_MODEL,
+                messages=[{"role": "system", "content": system_prompt}] + messages,
+                max_tokens=MAX_TOKENS,
+                stream=True,
+            )
+            
+            def groq_generator():
+                for chunk in stream:
+                    if chunk.choices[0].delta.content:
+                        yield chunk.choices[0].delta.content
+            
+            return chunks, groq_generator()
+        else:
+            client = self._load_anthropic(api_key)
+            stream_ctx = client.messages.stream(
+                model=CLAUDE_MODEL,
+                max_tokens=MAX_TOKENS,
+                system=system_prompt,
+                messages=messages,
+            )
+            
+            def anthropic_generator():
+                with stream_ctx as s:
+                    for text in s.text_stream:
+                        yield text
+            
+            return chunks, anthropic_generator()
 
     # ------------------------------------------------------------------
     # Private helpers

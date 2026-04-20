@@ -23,25 +23,25 @@ import sys
 import re
 
 INPUT_FILE = "data/transcripts_raw.json"
-VECTORSTORE_DIR = "vectorstore"
+INDEX_DIR = "data/search_index"
+INDEX_FILE = "data/search_index/tfidf_index.joblib"
 CHUNK_SIZE = 400        # words per chunk
 CHUNK_OVERLAP = 60      # words of overlap between chunks
-EMBED_MODEL = "all-MiniLM-L6-v2"   # fast, free, runs locally — 384 dimensions
 
 
 def install_deps():
-    pkgs = ["chromadb", "huggingface_hub"]
+    pkgs = ["scikit-learn", "joblib"]
     for p in pkgs:
         try:
             __import__(p.replace("-", "_"))
         except ImportError:
             print(f"Installing {p}...")
-            os.system(f"{sys.executable} -m pip install {p} -q")
+            os.system(f'"{sys.executable}" -m pip install {p} -q')
 
 install_deps()
 
-import chromadb  # noqa
-from huggingface_hub import InferenceClient  # noqa
+from sklearn.feature_extraction.text import TfidfVectorizer # noqa
+import joblib # noqa
 
 
 def chunk_text(text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP) -> list[str]:
@@ -62,7 +62,7 @@ def chunk_text(text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVE
     return chunks
 
 
-def build_vectorstore():
+def build_vectorstore(progress_cb=None):
     # Load transcripts
     if not os.path.exists(INPUT_FILE):
         print(f"ERROR: {INPUT_FILE} not found. Run step 1 first.")
@@ -73,45 +73,12 @@ def build_vectorstore():
 
     print(f"Loaded {len(transcripts)} transcripts")
 
-    # Define API embedding function
-    print(f"\nUsing HuggingFace Inference API: {EMBED_MODEL}")
-    client = InferenceClient(token=os.environ.get("HF_TOKEN"))
-    
-    def embedding_fn(texts: list[str]) -> list[list[float]]:
-        try:
-            embeddings = client.feature_extraction(
-                texts, 
-                model=f"sentence-transformers/{EMBED_MODEL}"
-            )
-            # Ensure it is a list of lists
-            if isinstance(embeddings, list) and not isinstance(embeddings[0], list):
-                return [embeddings]
-            return embeddings.tolist() if hasattr(embeddings, 'tolist') else embeddings
-        except Exception as e:
-            if "503" in str(e):
-                import time
-                print("  Model is loading on HF... waiting 20s")
-                time.sleep(20)
-                return embedding_fn(texts)
-            raise e
-    
-    print("API setup complete.")
+    # Setup indexing
+    print(f"\nBuilding TF-IDF Search Index...")
+    vectorizer = TfidfVectorizer(stop_words='english', min_df=2)
 
-    # Set up ChromaDB
-    os.makedirs(VECTORSTORE_DIR, exist_ok=True)
-    client = chromadb.PersistentClient(path=VECTORSTORE_DIR)
-
-    # Delete existing collection if rebuilding
-    try:
-        client.delete_collection("yt_transcripts")
-        print("Deleted existing collection (rebuilding)")
-    except Exception:
-        pass
-
-    collection = client.create_collection(
-        name="yt_transcripts",
-        metadata={"hnsw:space": "cosine"},
-    )
+    # Set up index directory
+    os.makedirs(INDEX_DIR, exist_ok=True)
 
     # Process each transcript
     all_chunks = []
@@ -140,30 +107,32 @@ def build_vectorstore():
             if len(preview_chunks) < 20:
                 preview_chunks.append({"id": chunk_id, "title": item["title"], "text": chunk[:300]})
 
-    print(f"\nTotal chunks to embed: {total_chunks}")
-    print("Embedding all chunks... (this may take a few minutes)")
+    print(f"\nTotal chunks to index: {total_chunks}")
+    print("Fitting TF-IDF and building matrix...")
 
-    # Embed in batches of 32 (smaller for API)
-    BATCH = 32
-    all_embeddings = []
-    for start in range(0, len(all_chunks), BATCH):
-        batch = all_chunks[start : start + BATCH]
-        embeddings = embedding_fn(batch)
-        all_embeddings.extend(embeddings)
-        done = min(start + BATCH, len(all_chunks))
-        pct = done / len(all_chunks) * 100
-        print(f"  Embedded {done}/{len(all_chunks)} ({pct:.0f}%)", end="\r")
+    # Fit TF-IDF on all chunks
+    if progress_cb: progress_cb(0.5, "Fitting TF-IDF...")
+    tfidf_matrix = vectorizer.fit_transform(all_chunks)
 
-    print("\nStoring in ChromaDB...")
+    if progress_cb: progress_cb(0.8, "Saving index...")
+    print("\nSaving index...")
 
-    # Insert in batches (ChromaDB has insert limits)
-    for start in range(0, len(all_chunks), BATCH):
-        collection.add(
-            documents=all_chunks[start : start + BATCH],
-            embeddings=all_embeddings[start : start + BATCH],
-            ids=all_ids[start : start + BATCH],
-            metadatas=all_metadatas[start : start + BATCH],
-        )
+    # Save to joblib
+    index_data = {
+        "vectorizer": vectorizer,
+        "tfidf_matrix": tfidf_matrix,
+        "chunks": [
+            {
+                "video_id": m["video_id"],
+                "title": m["title"],
+                "url": m["url"],
+                "chunk_index": m["chunk_index"],
+                "text": c
+            }
+            for m, c in zip(all_metadatas, all_chunks)
+        ]
+    }
+    joblib.dump(index_data, INDEX_FILE)
 
     # Save preview
     with open("data/chunks_preview.json", "w") as f:
@@ -173,7 +142,7 @@ def build_vectorstore():
     meta = {
         "total_videos": len(transcripts),
         "total_chunks": total_chunks,
-        "embed_model": EMBED_MODEL,
+        "method": "tfidf",
         "chunk_size": CHUNK_SIZE,
         "chunk_overlap": CHUNK_OVERLAP,
         "videos": [{"video_id": t["video_id"], "title": t["title"], "url": t["url"]} for t in transcripts],
@@ -181,9 +150,9 @@ def build_vectorstore():
     with open("data/vectorstore_meta.json", "w") as f:
         json.dump(meta, f, indent=2)
 
-    print(f"\nDONE! Vector database built.")
-    print(f"  {len(transcripts)} videos  |  {total_chunks} chunks  ->  vectorstore/")
-    print(f"  Preview saved → data/chunks_preview.json")
+    print(f"\nDONE! Search index built.")
+    print(f"  {len(transcripts)} videos  |  {total_chunks} chunks  ->  {INDEX_DIR}/")
+    print(f"  Preview saved -> data/chunks_preview.json")
 
 
 if __name__ == "__main__":
