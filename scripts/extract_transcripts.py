@@ -119,7 +119,7 @@ def main():
     # Load existing data if resuming
     existing = {}
     if args.resume and os.path.exists(OUTPUT_FILE):
-        with open(OUTPUT_FILE) as f:
+        with open(OUTPUT_FILE, encoding="utf-8") as f:
             for item in json.load(f):
                 existing[item["video_id"]] = item
         print(f"Resuming — {len(existing)} videos already extracted")
@@ -163,12 +163,12 @@ def main():
 
         # Save incrementally every 10 videos
         if (i + 1) % 10 == 0:
-            with open(OUTPUT_FILE, "w") as f:
+            with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
                 json.dump(results, f, indent=2, ensure_ascii=False)
 
         time.sleep(0.5)  # be polite to YouTube
 
-    with open(OUTPUT_FILE, "w") as f:
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
 
     print(f"\nDONE: {success} transcripts saved -> {OUTPUT_FILE}")

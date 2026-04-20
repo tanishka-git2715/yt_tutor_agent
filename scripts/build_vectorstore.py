@@ -68,7 +68,7 @@ def build_vectorstore(progress_cb=None):
         print(f"ERROR: {INPUT_FILE} not found. Run step 1 first.")
         sys.exit(1)
 
-    with open(INPUT_FILE) as f:
+    with open(INPUT_FILE, encoding="utf-8") as f:
         transcripts = json.load(f)
 
     print(f"Loaded {len(transcripts)} transcripts")
@@ -135,7 +135,7 @@ def build_vectorstore(progress_cb=None):
     joblib.dump(index_data, INDEX_FILE)
 
     # Save preview
-    with open("data/chunks_preview.json", "w") as f:
+    with open("data/chunks_preview.json", "w", encoding="utf-8") as f:
         json.dump(preview_chunks, f, indent=2, ensure_ascii=False)
 
     # Save metadata file for the app to read
@@ -147,8 +147,8 @@ def build_vectorstore(progress_cb=None):
         "chunk_overlap": CHUNK_OVERLAP,
         "videos": [{"video_id": t["video_id"], "title": t["title"], "url": t["url"]} for t in transcripts],
     }
-    with open("data/vectorstore_meta.json", "w") as f:
-        json.dump(meta, f, indent=2)
+    with open("data/vectorstore_meta.json", "w", encoding="utf-8") as f:
+        json.dump(meta, f, indent=2, ensure_ascii=False)
 
     print(f"\nDONE! Search index built.")
     print(f"  {len(transcripts)} videos  |  {total_chunks} chunks  ->  {INDEX_DIR}/")

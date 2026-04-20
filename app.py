@@ -178,7 +178,7 @@ with st.sidebar:
                 status.update(label="Index built!", state="complete", expanded=False)
                 st.rerun()
     else:
-        with open("data/vectorstore_meta.json") as f:
+        with open("data/vectorstore_meta.json", encoding="utf-8") as f:
             meta = json.load(f)
 
         col1, col2 = st.columns(2)
@@ -231,7 +231,7 @@ with st.sidebar:
 
     # Video list
     if meta_exists:
-        with open("data/vectorstore_meta.json") as f:
+        with open("data/vectorstore_meta.json", encoding="utf-8") as f:
             meta2 = json.load(f)
         with st.expander(f"📹 {meta2['total_videos']} indexed videos"):
             for v in meta2.get("videos", []):

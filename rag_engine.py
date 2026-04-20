@@ -81,7 +81,7 @@ class YTTutorEngine:
                     f"Metadata file not found: {META_FILE}\n"
                     "Run scripts/2_build_vectorstore.py first."
                 )
-            with open(META_FILE) as f:
+            with open(META_FILE, encoding="utf-8") as f:
                 self._meta = json.load(f)
         return self._meta
 
