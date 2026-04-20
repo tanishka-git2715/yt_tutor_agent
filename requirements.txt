@@ -2,3 +2,4 @@ anthropic>=0.25.0
 chromadb>=0.4.24
 yt-dlp>=2024.4.9
 streamlit>=1.35.0
+python-dotenv>=1.0.1

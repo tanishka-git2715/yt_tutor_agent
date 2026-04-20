@@ -1,6 +1,6 @@
 {
-  "total_videos": 200,
-  "total_chunks": 5590,
+  "total_videos": 318,
+  "total_chunks": 6916,
   "method": "tfidf",
   "chunk_size": 400,
   "chunk_overlap": 60,
@@ -1004,6 +1004,596 @@
       "video_id": "Ktwv_uEW-uA",
       "title": "\"What now?\" [Ep 009]",
       "url": "https://www.youtube.com/watch?v=Ktwv_uEW-uA"
+    },
+    {
+      "video_id": "4GjwtnA76ig",
+      "title": "This video will make you more money than anything else on the Internet",
+      "url": "https://www.youtube.com/watch?v=4GjwtnA76ig"
+    },
+    {
+      "video_id": "jvXOOddDg_s",
+      "title": "How to Get Rich [Full Interview with Dave Ramsey]",
+      "url": "https://www.youtube.com/watch?v=jvXOOddDg_s"
+    },
+    {
+      "video_id": "aBPWCdaJJqA",
+      "title": "I Helped 6 Business Owners Make More Money",
+      "url": "https://www.youtube.com/watch?v=aBPWCdaJJqA"
+    },
+    {
+      "video_id": "HKbFUWJwEG0",
+      "title": "I Reverse Engineered the Perfect Business",
+      "url": "https://www.youtube.com/watch?v=HKbFUWJwEG0"
+    },
+    {
+      "video_id": "fd-hi3NqMYo",
+      "title": "I Gained 5,000,000+ Followers with this Secret Method",
+      "url": "https://www.youtube.com/watch?v=fd-hi3NqMYo"
+    },
+    {
+      "video_id": "qel9bf653Es",
+      "title": "Behind the Scenes of The $100M Leads Launch [Ep 006]",
+      "url": "https://www.youtube.com/watch?v=qel9bf653Es"
+    },
+    {
+      "video_id": "cHXYi7MqP5c",
+      "title": "Behind the Scenes of the $100M Leads Book Launch [OFFICIAL TRAILER]",
+      "url": "https://www.youtube.com/watch?v=cHXYi7MqP5c"
+    },
+    {
+      "video_id": "RdAKXJlMIZM",
+      "title": "How to get SO rich you question the meaning of making money",
+      "url": "https://www.youtube.com/watch?v=RdAKXJlMIZM"
+    },
+    {
+      "video_id": "w7g08dVTwaE",
+      "title": "Watch this to get your first 5 customers",
+      "url": "https://www.youtube.com/watch?v=w7g08dVTwaE"
+    },
+    {
+      "video_id": "60_7PU9JDIw",
+      "title": "My $100M Leads Affiliate Marketing Guide",
+      "url": "https://www.youtube.com/watch?v=60_7PU9JDIw"
+    },
+    {
+      "video_id": "5cOwh-8scu8",
+      "title": "Make Money Online (Without Destroying Your Reputation)",
+      "url": "https://www.youtube.com/watch?v=5cOwh-8scu8"
+    },
+    {
+      "video_id": "y7O-iTWwTW8",
+      "title": "Interviewing a Billionaire + Revealing My Workout Routine [Ep 005]",
+      "url": "https://www.youtube.com/watch?v=y7O-iTWwTW8"
+    },
+    {
+      "video_id": "7NMH1oAkgLY",
+      "title": "Giving Away Free Stuff Will Make You Rich",
+      "url": "https://www.youtube.com/watch?v=7NMH1oAkgLY"
+    },
+    {
+      "video_id": "VPre_XMgKjs",
+      "title": "Why MrBeast Will be Worth $100 Billion",
+      "url": "https://www.youtube.com/watch?v=VPre_XMgKjs"
+    },
+    {
+      "video_id": "zZyRg4Fzabk",
+      "title": "HUGE ANNOUNCEMENT",
+      "url": "https://www.youtube.com/watch?v=zZyRg4Fzabk"
+    },
+    {
+      "video_id": "Nh8Oc7ERdIU",
+      "title": "How to Get Ahead of 99% of People",
+      "url": "https://www.youtube.com/watch?v=Nh8Oc7ERdIU"
+    },
+    {
+      "video_id": "lJF__n_34ew",
+      "title": "My 12 Hour Work Day (in 15 Minutes) [Ep 003]",
+      "url": "https://www.youtube.com/watch?v=lJF__n_34ew"
+    },
+    {
+      "video_id": "YFA8AS5Cu2w",
+      "title": "watch this if you're tired of being broke",
+      "url": "https://www.youtube.com/watch?v=YFA8AS5Cu2w"
+    },
+    {
+      "video_id": "1taVrxMFjaY",
+      "title": "NO NEW FRIENDS (My \"Extreme Views\" on Friendship)",
+      "url": "https://www.youtube.com/watch?v=1taVrxMFjaY"
+    },
+    {
+      "video_id": "9gVdCR7W8o8",
+      "title": "The REAL Reason Your Business Isn't Growing",
+      "url": "https://www.youtube.com/watch?v=9gVdCR7W8o8"
+    },
+    {
+      "video_id": "6ySRKgXBcO0",
+      "title": "Day In The Life of Alex Hormozi [Ep 002]",
+      "url": "https://www.youtube.com/watch?v=6ySRKgXBcO0"
+    },
+    {
+      "video_id": "qLM5G7N3l3I",
+      "title": "3 Ways to Do What You Love (and get wealthy too)",
+      "url": "https://www.youtube.com/watch?v=qLM5G7N3l3I"
+    },
+    {
+      "video_id": "KQuyQpFANpA",
+      "title": "3 Simple Fixes that Grow Any Business",
+      "url": "https://www.youtube.com/watch?v=KQuyQpFANpA"
+    },
+    {
+      "video_id": "oTQPxPFROck",
+      "title": "How to Build a LEGIT Online Course (Works in 2026)",
+      "url": "https://www.youtube.com/watch?v=oTQPxPFROck"
+    },
+    {
+      "video_id": "fxyhIXZ6Yog",
+      "title": "The Alex Hormozi Diet (REVEALED)",
+      "url": "https://www.youtube.com/watch?v=fxyhIXZ6Yog"
+    },
+    {
+      "video_id": "SYkwtqFoRcM",
+      "title": "How to go ALL IN on your side hustle...",
+      "url": "https://www.youtube.com/watch?v=SYkwtqFoRcM"
+    },
+    {
+      "video_id": "zBZHWrvjD8Y",
+      "title": "How I Set Goals That ACTUALLY MAKE MONEY",
+      "url": "https://www.youtube.com/watch?v=zBZHWrvjD8Y"
+    },
+    {
+      "video_id": "LVM89ik-7Kw",
+      "title": "\"I'm Broke, What Should I Sell?\"",
+      "url": "https://www.youtube.com/watch?v=LVM89ik-7Kw"
+    },
+    {
+      "video_id": "ueJg14gQLuc",
+      "title": "The SEASON OF NO (What it Takes to Win)",
+      "url": "https://www.youtube.com/watch?v=ueJg14gQLuc"
+    },
+    {
+      "video_id": "BHMeYaHEMpc",
+      "title": "How to Grow ANY Local Business (my framework)",
+      "url": "https://www.youtube.com/watch?v=BHMeYaHEMpc"
+    },
+    {
+      "video_id": "_PCCqqv2pig",
+      "title": "HOW TO GET WHAT YOU WANT (6 Proven Methods)",
+      "url": "https://www.youtube.com/watch?v=_PCCqqv2pig"
+    },
+    {
+      "video_id": "zNJ5JzEJgyo",
+      "title": "Why You Shouldn't Copy Me",
+      "url": "https://www.youtube.com/watch?v=zNJ5JzEJgyo"
+    },
+    {
+      "video_id": "vZfatNSouDQ",
+      "title": "Hardcore Business Lessons I Learned From A Dealer",
+      "url": "https://www.youtube.com/watch?v=vZfatNSouDQ"
+    },
+    {
+      "video_id": "ULGT0Qpglek",
+      "title": "17 Life-Changing Conversations I Wish I Had Earlier",
+      "url": "https://www.youtube.com/watch?v=ULGT0Qpglek"
+    },
+    {
+      "video_id": "-wnnwCqGeNc",
+      "title": "The #1 Reason Young People Stay Poor",
+      "url": "https://www.youtube.com/watch?v=-wnnwCqGeNc"
+    },
+    {
+      "video_id": "0mqqbuM9sAk",
+      "title": "I Built 4 Businesses In A Row To Show It's Not Luck",
+      "url": "https://www.youtube.com/watch?v=0mqqbuM9sAk"
+    },
+    {
+      "video_id": "ONV__y1z7MI",
+      "title": "How The World\u2019s RICHEST Man Made His Money",
+      "url": "https://www.youtube.com/watch?v=ONV__y1z7MI"
+    },
+    {
+      "video_id": "z7X95bn2T6A",
+      "title": "I Challenged My Team To Replace Themselves with AI",
+      "url": "https://www.youtube.com/watch?v=z7X95bn2T6A"
+    },
+    {
+      "video_id": "INm4U2S7Vu8",
+      "title": "Get RICH With These 24 Investing Rules",
+      "url": "https://www.youtube.com/watch?v=INm4U2S7Vu8"
+    },
+    {
+      "video_id": "rp1PzCxj3eU",
+      "title": "42 Recession Proof Money Hacks",
+      "url": "https://www.youtube.com/watch?v=rp1PzCxj3eU"
+    },
+    {
+      "video_id": "TIH1w-KuATk",
+      "title": "7 Secrets Behind Chick-fil-A\u2019s $50B Empire",
+      "url": "https://www.youtube.com/watch?v=TIH1w-KuATk"
+    },
+    {
+      "video_id": "xZ8d9g6BcKM",
+      "title": "Building a Frozen Yogurt Store in 11 Minutes",
+      "url": "https://www.youtube.com/watch?v=xZ8d9g6BcKM"
+    },
+    {
+      "video_id": "vthPawWn6ws",
+      "title": "Watch this if you\u2019re feeling burnt out",
+      "url": "https://www.youtube.com/watch?v=vthPawWn6ws"
+    },
+    {
+      "video_id": "KYqEK_T_5M4",
+      "title": "Get RICH in the A.I. Revolution (2023)",
+      "url": "https://www.youtube.com/watch?v=KYqEK_T_5M4"
+    },
+    {
+      "video_id": "q6SdmgIji30",
+      "title": "14 Money Mistakes to AVOID in Your 20's",
+      "url": "https://www.youtube.com/watch?v=q6SdmgIji30"
+    },
+    {
+      "video_id": "CGSd00h-6zI",
+      "title": "The Best Student Side Hustle in 2026",
+      "url": "https://www.youtube.com/watch?v=CGSd00h-6zI"
+    },
+    {
+      "video_id": "Day0yToqeco",
+      "title": "Why Looking Poor is actually Smart",
+      "url": "https://www.youtube.com/watch?v=Day0yToqeco"
+    },
+    {
+      "video_id": "4pZwlE86A5Y",
+      "title": "A YouTuber Asked Me \"How To Business\". Here's My Answer",
+      "url": "https://www.youtube.com/watch?v=4pZwlE86A5Y"
+    },
+    {
+      "video_id": "NDDFezF7OTA",
+      "title": "STOP trying to be happy.",
+      "url": "https://www.youtube.com/watch?v=NDDFezF7OTA"
+    },
+    {
+      "video_id": "K8MFC9t7snY",
+      "title": "How to get customers to pay forever",
+      "url": "https://www.youtube.com/watch?v=K8MFC9t7snY"
+    },
+    {
+      "video_id": "5MHQr-Z17Hc",
+      "title": "This ONE Equation Will Make You RICH",
+      "url": "https://www.youtube.com/watch?v=5MHQr-Z17Hc"
+    },
+    {
+      "video_id": "yflKMUffctE",
+      "title": "How They Keep You POOR Forever",
+      "url": "https://www.youtube.com/watch?v=yflKMUffctE"
+    },
+    {
+      "video_id": "GkL2KDOf2NM",
+      "title": "Billionaire Recession Advice: Stop Investing in THIS (2023)",
+      "url": "https://www.youtube.com/watch?v=GkL2KDOf2NM"
+    },
+    {
+      "video_id": "7sLXhCDRaV8",
+      "title": "10 Different Ways To Break Down Making $1 Million",
+      "url": "https://www.youtube.com/watch?v=7sLXhCDRaV8"
+    },
+    {
+      "video_id": "cq8GyLrEuAk",
+      "title": "14 Life Lessons I Wish I Knew Earlier",
+      "url": "https://www.youtube.com/watch?v=cq8GyLrEuAk"
+    },
+    {
+      "video_id": "vVssypj7nYw",
+      "title": "Why old friends keep you poor...",
+      "url": "https://www.youtube.com/watch?v=vVssypj7nYw"
+    },
+    {
+      "video_id": "6DCDGSnRDtM",
+      "title": "Get Rich in the New Economy",
+      "url": "https://www.youtube.com/watch?v=6DCDGSnRDtM"
+    },
+    {
+      "video_id": "PTgGfV8Tf00",
+      "title": "Hard work won't make you rich.",
+      "url": "https://www.youtube.com/watch?v=PTgGfV8Tf00"
+    },
+    {
+      "video_id": "39I8jEqFdYc",
+      "title": "I Was Wrong About Mentorship...",
+      "url": "https://www.youtube.com/watch?v=39I8jEqFdYc"
+    },
+    {
+      "video_id": "2lA_A8BGRRs",
+      "title": "How To Build Large Sales Teams (Starting from 0)",
+      "url": "https://www.youtube.com/watch?v=2lA_A8BGRRs"
+    },
+    {
+      "video_id": "-TOYJHax5x8",
+      "title": "How I Wrote A #1 Bestseller with $0 and No Publisher",
+      "url": "https://www.youtube.com/watch?v=-TOYJHax5x8"
+    },
+    {
+      "video_id": "JsXZzgD_k9k",
+      "title": "This ONE Thing Will Make You A Better Entrepreneur",
+      "url": "https://www.youtube.com/watch?v=JsXZzgD_k9k"
+    },
+    {
+      "video_id": "bx48qPlaGvE",
+      "title": "My Best Sales Tactic (to Make a TON of Money)",
+      "url": "https://www.youtube.com/watch?v=bx48qPlaGvE"
+    },
+    {
+      "video_id": "7DKXLasU4Kg",
+      "title": "How To Never Feel Stressed Again",
+      "url": "https://www.youtube.com/watch?v=7DKXLasU4Kg"
+    },
+    {
+      "video_id": "yEKu6q0W3gs",
+      "title": "How TO Make A TON Of Money (in just a few minutes)",
+      "url": "https://www.youtube.com/watch?v=yEKu6q0W3gs"
+    },
+    {
+      "video_id": "_ArQlwPvGUA",
+      "title": "A Magic Business Genie Grants You 3 Wishes...",
+      "url": "https://www.youtube.com/watch?v=_ArQlwPvGUA"
+    },
+    {
+      "video_id": "PFKGHL1MqkU",
+      "title": "Investor 3min Morning Routine (It just works)",
+      "url": "https://www.youtube.com/watch?v=PFKGHL1MqkU"
+    },
+    {
+      "video_id": "7ITff1fIbSc",
+      "title": "How to Grow an Audience if You Have 0 Followers",
+      "url": "https://www.youtube.com/watch?v=7ITff1fIbSc"
+    },
+    {
+      "video_id": "5RiR6cBLkFg",
+      "title": "Why you should quit college.",
+      "url": "https://www.youtube.com/watch?v=5RiR6cBLkFg"
+    },
+    {
+      "video_id": "Q2JCTCQzgKM",
+      "title": "From Rock Bottom to Breakthrough (if you're feeling down, watch this)",
+      "url": "https://www.youtube.com/watch?v=Q2JCTCQzgKM"
+    },
+    {
+      "video_id": "LMlbWtUFa4E",
+      "title": "How Billionaires Make Their Billions",
+      "url": "https://www.youtube.com/watch?v=LMlbWtUFa4E"
+    },
+    {
+      "video_id": "LvHDT0ZxSmw",
+      "title": "Launch A Physical Product Brand The Right Way",
+      "url": "https://www.youtube.com/watch?v=LvHDT0ZxSmw"
+    },
+    {
+      "video_id": "dZ7xeVCYC5M",
+      "title": "How I Would Invest $1000 If I Were In My 20s",
+      "url": "https://www.youtube.com/watch?v=dZ7xeVCYC5M"
+    },
+    {
+      "video_id": "hrp3ehx_lJM",
+      "title": "How I Hacked My Brain to Feel Gratitude All the Time",
+      "url": "https://www.youtube.com/watch?v=hrp3ehx_lJM"
+    },
+    {
+      "video_id": "MD5-HByRxoA",
+      "title": "1.2M Followers in 6 Months\u2026 My Content Marketing Strategy REVEALED",
+      "url": "https://www.youtube.com/watch?v=MD5-HByRxoA"
+    },
+    {
+      "video_id": "JDkiAxSd5Ms",
+      "title": "\"My Employees Don't Take My Business Serious...Why?\"",
+      "url": "https://www.youtube.com/watch?v=JDkiAxSd5Ms"
+    },
+    {
+      "video_id": "JShQ8BX08rs",
+      "title": "10 KEYS to a TERRIBLE Business Partnership [GUARANTEED!]",
+      "url": "https://www.youtube.com/watch?v=JShQ8BX08rs"
+    },
+    {
+      "video_id": "NA61omfYgvI",
+      "title": "Applying $100M Offers to E-Commerce: I'm Pissed",
+      "url": "https://www.youtube.com/watch?v=NA61omfYgvI"
+    },
+    {
+      "video_id": "IMowPVgcWbA",
+      "title": "The SIMPLE Managerial Framework that changed my business",
+      "url": "https://www.youtube.com/watch?v=IMowPVgcWbA"
+    },
+    {
+      "video_id": "EUW3rMp-Uvg",
+      "title": "Biggest mistake that stopped me from getting past $30M",
+      "url": "https://www.youtube.com/watch?v=EUW3rMp-Uvg"
+    },
+    {
+      "video_id": "A9qHKjFPJ-E",
+      "title": "2 Types of Business Risk and the One I Choose EVERY TIME",
+      "url": "https://www.youtube.com/watch?v=A9qHKjFPJ-E"
+    },
+    {
+      "video_id": "To8jcTDwcxc",
+      "title": "Why I chose to disappoint my dad",
+      "url": "https://www.youtube.com/watch?v=To8jcTDwcxc"
+    },
+    {
+      "video_id": "6nkoXslz_pI",
+      "title": "Why I don't follow my feelings..",
+      "url": "https://www.youtube.com/watch?v=6nkoXslz_pI"
+    },
+    {
+      "video_id": "AGCtZmgJ1JA",
+      "title": "How I learned to SELL...[mindset training]",
+      "url": "https://www.youtube.com/watch?v=AGCtZmgJ1JA"
+    },
+    {
+      "video_id": "x1CtbsEqxW0",
+      "title": "I lived on $0 income for 3 years growing my business...",
+      "url": "https://www.youtube.com/watch?v=x1CtbsEqxW0"
+    },
+    {
+      "video_id": "Ul87yrDKZ78",
+      "title": "How to CLOSE THE SALE when the prospect says, \"I left my wallet at home..\"",
+      "url": "https://www.youtube.com/watch?v=Ul87yrDKZ78"
+    },
+    {
+      "video_id": "WsYgWC7NmO8",
+      "title": "Top 10 Fast Business Lessons From My Last 10 Years",
+      "url": "https://www.youtube.com/watch?v=WsYgWC7NmO8"
+    },
+    {
+      "video_id": "pmxzhyF0NrE",
+      "title": "2 Signs That You Will Become Wealthy One Day..",
+      "url": "https://www.youtube.com/watch?v=pmxzhyF0NrE"
+    },
+    {
+      "video_id": "WrCt0R3FBFs",
+      "title": "How I built a 1.2M follower audience in 6 months",
+      "url": "https://www.youtube.com/watch?v=WrCt0R3FBFs"
+    },
+    {
+      "video_id": "XwZH-lOKG9c",
+      "title": "KEYNOTE: Small To BIG. The Big 4 Customer Acquisition Models.",
+      "url": "https://www.youtube.com/watch?v=XwZH-lOKG9c"
+    },
+    {
+      "video_id": "rl_IkHyKHJI",
+      "title": "Why losing friends is normal...",
+      "url": "https://www.youtube.com/watch?v=rl_IkHyKHJI"
+    },
+    {
+      "video_id": "pWbSl7d0tEc",
+      "title": "I sold 8 businesses by age 32 [here\u2019s how]",
+      "url": "https://www.youtube.com/watch?v=pWbSl7d0tEc"
+    },
+    {
+      "video_id": "QQGHCG8d1So",
+      "title": "I emailed myself all of my failures for the last 5 years...this is what I learned..",
+      "url": "https://www.youtube.com/watch?v=QQGHCG8d1So"
+    },
+    {
+      "video_id": "NcD2t9qt-fM",
+      "title": "The Best SALES TRAINING On The Internet",
+      "url": "https://www.youtube.com/watch?v=NcD2t9qt-fM"
+    },
+    {
+      "video_id": "yr1DrcPCKEg",
+      "title": "How the ULTRA WEALTHY get loans to buy cool stuff...",
+      "url": "https://www.youtube.com/watch?v=yr1DrcPCKEg"
+    },
+    {
+      "video_id": "WRW7eY6K4Jo",
+      "title": "They lied to you: Why Punishment DOESN'T WORK..",
+      "url": "https://www.youtube.com/watch?v=WRW7eY6K4Jo"
+    },
+    {
+      "video_id": "9ySuYdJ0H4s",
+      "title": "REPROGRAM your mind to be rich in 22 minutes....",
+      "url": "https://www.youtube.com/watch?v=9ySuYdJ0H4s"
+    },
+    {
+      "video_id": "kzKxrifSMNg",
+      "title": "How the best entrepreneurs REDEFINE reality..",
+      "url": "https://www.youtube.com/watch?v=kzKxrifSMNg"
+    },
+    {
+      "video_id": "bP_rsdO3hWM",
+      "title": "Why selfcare makes you poor & fragile [trigger warning]",
+      "url": "https://www.youtube.com/watch?v=bP_rsdO3hWM"
+    },
+    {
+      "video_id": "FNJpJG-sSXM",
+      "title": "Biden's tax plan.....",
+      "url": "https://www.youtube.com/watch?v=FNJpJG-sSXM"
+    },
+    {
+      "video_id": "pw1PcHfYP2w",
+      "title": "Starting a software company is a TERRIBLE F@#$ING IDEA... [TRIGGER WARNING]",
+      "url": "https://www.youtube.com/watch?v=pw1PcHfYP2w"
+    },
+    {
+      "video_id": "_33XVdvO4Gc",
+      "title": "The day when everything changed for me...",
+      "url": "https://www.youtube.com/watch?v=_33XVdvO4Gc"
+    },
+    {
+      "video_id": "-Pz0NpcILOY",
+      "title": "I increased my wealth EXPONENTIALLY using the power of INVERSE thinking...",
+      "url": "https://www.youtube.com/watch?v=-Pz0NpcILOY"
+    },
+    {
+      "video_id": "aOq1Hdz0w3k",
+      "title": "What I look for to invest in companies [no bs]",
+      "url": "https://www.youtube.com/watch?v=aOq1Hdz0w3k"
+    },
+    {
+      "video_id": "MwhsM7qijy8",
+      "title": "6 Ways Small Businesses Beat Big(ger) Competitors...",
+      "url": "https://www.youtube.com/watch?v=MwhsM7qijy8"
+    },
+    {
+      "video_id": "RBR4BwOVNvs",
+      "title": "I sold everything",
+      "url": "https://www.youtube.com/watch?v=RBR4BwOVNvs"
+    },
+    {
+      "video_id": "Jv3GmZ9Odko",
+      "title": "What Millionaires Know That You Don't",
+      "url": "https://www.youtube.com/watch?v=Jv3GmZ9Odko"
+    },
+    {
+      "video_id": "bHnVItVGJPA",
+      "title": "$100M Salesman Reveals #1 Persuasion Hack",
+      "url": "https://www.youtube.com/watch?v=bHnVItVGJPA"
+    },
+    {
+      "video_id": "55H71isO_Bo",
+      "title": "I will never lose sleep again after learning this..",
+      "url": "https://www.youtube.com/watch?v=55H71isO_Bo"
+    },
+    {
+      "video_id": "YaNX49ygr0I",
+      "title": "How to get what you want...",
+      "url": "https://www.youtube.com/watch?v=YaNX49ygr0I"
+    },
+    {
+      "video_id": "sij16VKQL2M",
+      "title": "The biggest mistake in your 20's that will make you poor in your 30's",
+      "url": "https://www.youtube.com/watch?v=sij16VKQL2M"
+    },
+    {
+      "video_id": "Ec41cSp_tWc",
+      "title": "Why direct response marketers get rich...not wealthy",
+      "url": "https://www.youtube.com/watch?v=Ec41cSp_tWc"
+    },
+    {
+      "video_id": "j536U19iTwk",
+      "title": "Want to be rich? Stop letting THIS affect you...",
+      "url": "https://www.youtube.com/watch?v=j536U19iTwk"
+    },
+    {
+      "video_id": "kX2EJSwOCug",
+      "title": "If you think like this, you will stay poor and unhappy...",
+      "url": "https://www.youtube.com/watch?v=kX2EJSwOCug"
+    },
+    {
+      "video_id": "-TydwZMX8wM",
+      "title": "How society fools the poor with \"work/life balance\"",
+      "url": "https://www.youtube.com/watch?v=-TydwZMX8wM"
+    },
+    {
+      "video_id": "7NqsFh5ej0w",
+      "title": "The first 5 hires EVERY entrepreneur should make...or go broke...",
+      "url": "https://www.youtube.com/watch?v=7NqsFh5ej0w"
+    },
+    {
+      "video_id": "VgEvIIpDYG8",
+      "title": "The 10 Minute MILLIONAIRE entrepreneur advice for people starting from ZERO",
+      "url": "https://www.youtube.com/watch?v=VgEvIIpDYG8"
+    },
+    {
+      "video_id": "kW2vDMAmlPI",
+      "title": "$100M CEO: How I know who to trust...",
+      "url": "https://www.youtube.com/watch?v=kW2vDMAmlPI"
     }
   ]
 }
