@@ -1,6 +1,7 @@
 # Environments
 .env
 .env.local
+.streamlit/
 .venv/
 env/
 venv/
