@@ -119,24 +119,40 @@ with st.sidebar:
 
     # API Keys
     if provider == "anthropic":
-        api_key = st.text_input(
-            "Anthropic API Key",
-            type="password",
-            value=os.environ.get("ANTHROPIC_API_KEY", ""),
-            placeholder="sk-ant-...",
-        )
-        if api_key:
-            os.environ["ANTHROPIC_API_KEY"] = api_key
+        env_key = os.environ.get("ANTHROPIC_API_KEY", "")
+        if env_key and not st.session_state.get("show_anthropic_input"):
+            st.success("✅ Anthropic Key loaded from Secrets")
+            if st.button("Change Key", key="btn_ant"):
+                st.session_state.show_anthropic_input = True
+                st.rerun()
+            api_key = env_key
+        else:
+            api_key = st.text_input(
+                "Anthropic API Key",
+                type="password",
+                value=env_key if env_key else "",
+                placeholder="sk-ant-...",
+            )
+            if api_key:
+                os.environ["ANTHROPIC_API_KEY"] = api_key
     else:
-        api_key = st.text_input(
-            "Groq API Key",
-            type="password",
-            value=st.session_state.groq_api_key or os.environ.get("GROQ_API_KEY", ""),
-            placeholder="gsk_...",
-        )
-        if api_key:
-            st.session_state.groq_api_key = api_key
-            os.environ["GROQ_API_KEY"] = api_key
+        env_key = st.session_state.groq_api_key or os.environ.get("GROQ_API_KEY", "")
+        if env_key and not st.session_state.get("show_groq_input"):
+            st.success("✅ Groq Key loaded from Secrets")
+            if st.button("Change Key", key="btn_groq"):
+                st.session_state.show_groq_input = True
+                st.rerun()
+            api_key = env_key
+        else:
+            api_key = st.text_input(
+                "Groq API Key",
+                type="password",
+                value=env_key if env_key else "",
+                placeholder="gsk_...",
+            )
+            if api_key:
+                st.session_state.groq_api_key = api_key
+                os.environ["GROQ_API_KEY"] = api_key
 
     st.markdown("---")
 
