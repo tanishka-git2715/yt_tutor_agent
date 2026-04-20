@@ -1,6 +1,6 @@
 {
-  "total_videos": 160,
-  "total_chunks": 4600,
+  "total_videos": 200,
+  "total_chunks": 5590,
   "method": "tfidf",
   "chunk_size": 400,
   "chunk_overlap": 60,
@@ -804,6 +804,206 @@
       "video_id": "3Ju1I37jWUM",
       "title": "You're Not Behind: My System for Outlearning Everyone",
       "url": "https://www.youtube.com/watch?v=3Ju1I37jWUM"
+    },
+    {
+      "video_id": "Luvfw14pVx4",
+      "title": "Business Owners: You're (Probably) Not Good Enough",
+      "url": "https://www.youtube.com/watch?v=Luvfw14pVx4"
+    },
+    {
+      "video_id": "1UhvBSQFy6A",
+      "title": "10x Revenue with 1 New Sales Process (You Can Steal It)",
+      "url": "https://www.youtube.com/watch?v=1UhvBSQFy6A"
+    },
+    {
+      "video_id": "KhFlD54nQrY",
+      "title": "13 Years Of Brutally Honest Business Advice in 90 Mins",
+      "url": "https://www.youtube.com/watch?v=KhFlD54nQrY"
+    },
+    {
+      "video_id": "6x3re5-Ms1E",
+      "title": "The Ultra Rich Playbook [Legal & Tax-Free]",
+      "url": "https://www.youtube.com/watch?v=6x3re5-Ms1E"
+    },
+    {
+      "video_id": "oRqnTOT9ZG8",
+      "title": "If I Wanted to Monetize An Audience in 2026, This is What I Would Do",
+      "url": "https://www.youtube.com/watch?v=oRqnTOT9ZG8"
+    },
+    {
+      "video_id": "Z2tgZC_XkT4",
+      "title": "How to 10x Your Business Overnight with Influencers",
+      "url": "https://www.youtube.com/watch?v=Z2tgZC_XkT4"
+    },
+    {
+      "video_id": "HVOubeXUcx0",
+      "title": "How I Gained 7.8 Million Followers In 40 Months (6 Key Lessons)",
+      "url": "https://www.youtube.com/watch?v=HVOubeXUcx0"
+    },
+    {
+      "video_id": "sPkMHh8zTMI",
+      "title": "7 Ways to Get People to Buy More Times",
+      "url": "https://www.youtube.com/watch?v=sPkMHh8zTMI"
+    },
+    {
+      "video_id": "VQM3DrnVTcs",
+      "title": "$100M CEO Explains How to Build A Brand in 2024",
+      "url": "https://www.youtube.com/watch?v=VQM3DrnVTcs"
+    },
+    {
+      "video_id": "IFpHasZ7jN4",
+      "title": "54.1% of People Who Try This Make their 1st Dollar Online",
+      "url": "https://www.youtube.com/watch?v=IFpHasZ7jN4"
+    },
+    {
+      "video_id": "oys_fv25SYM",
+      "title": "Advice I Wish Someone Gave Me When I Was Broke",
+      "url": "https://www.youtube.com/watch?v=oys_fv25SYM"
+    },
+    {
+      "video_id": "tdLLGKoBojo",
+      "title": "I Lost $100 Million... Here's What I Learned",
+      "url": "https://www.youtube.com/watch?v=tdLLGKoBojo"
+    },
+    {
+      "video_id": "M4evdxF5G0s",
+      "title": "watch this if you want to find your purpose in life",
+      "url": "https://www.youtube.com/watch?v=M4evdxF5G0s"
+    },
+    {
+      "video_id": "UxQJ64BNuco",
+      "title": "The Alex Hormozi Guide to Haters [REVEALED]",
+      "url": "https://www.youtube.com/watch?v=UxQJ64BNuco"
+    },
+    {
+      "video_id": "oK2_u-uS_Bo",
+      "title": "Money Lessons I Learned In Marriage.",
+      "url": "https://www.youtube.com/watch?v=oK2_u-uS_Bo"
+    },
+    {
+      "video_id": "nxL4ZfVqKLI",
+      "title": "Seriously, watch this before you go to college",
+      "url": "https://www.youtube.com/watch?v=nxL4ZfVqKLI"
+    },
+    {
+      "video_id": "5JLqmQlGG0U",
+      "title": "If I Wanted to Get Rich and Famous, This Is What I'd Do",
+      "url": "https://www.youtube.com/watch?v=5JLqmQlGG0U"
+    },
+    {
+      "video_id": "jiCGLDhUCHY",
+      "title": "If I Were Single and Starting Over, This Is What I Would Do",
+      "url": "https://www.youtube.com/watch?v=jiCGLDhUCHY"
+    },
+    {
+      "video_id": "YZdE8U5eD_s",
+      "title": "If You Want to Start a Business in 2024, Watch This Interview",
+      "url": "https://www.youtube.com/watch?v=YZdE8U5eD_s"
+    },
+    {
+      "video_id": "pt50QF6al8g",
+      "title": "Brutally Honest Advice to Build Your Confidence",
+      "url": "https://www.youtube.com/watch?v=pt50QF6al8g"
+    },
+    {
+      "video_id": "3aAbKVSFP6k",
+      "title": "\"Getting rich isn't fun\" [Ep 014]",
+      "url": "https://www.youtube.com/watch?v=3aAbKVSFP6k"
+    },
+    {
+      "video_id": "0_Gf5v8DEMY",
+      "title": "I Helped Business Owners Overcome Their Fear of Failure",
+      "url": "https://www.youtube.com/watch?v=0_Gf5v8DEMY"
+    },
+    {
+      "video_id": "DiQ3N8F1Hl8",
+      "title": "Brutally Honest Advice to my Poorer Younger Self",
+      "url": "https://www.youtube.com/watch?v=DiQ3N8F1Hl8"
+    },
+    {
+      "video_id": "hGX_z5rXRlU",
+      "title": "The Alex Hormozi Cookbook [REVEALED]",
+      "url": "https://www.youtube.com/watch?v=hGX_z5rXRlU"
+    },
+    {
+      "video_id": "hCgr7jT7JLA",
+      "title": "Answering Juicy Questions About Our Relationship",
+      "url": "https://www.youtube.com/watch?v=hCgr7jT7JLA"
+    },
+    {
+      "video_id": "QGcjweehrvU",
+      "title": "Million Dollar Equations",
+      "url": "https://www.youtube.com/watch?v=QGcjweehrvU"
+    },
+    {
+      "video_id": "-NLqtk4F4oY",
+      "title": "Charlie Munger Changed My Life [8 Lessons]",
+      "url": "https://www.youtube.com/watch?v=-NLqtk4F4oY"
+    },
+    {
+      "video_id": "MNll1BaskLA",
+      "title": "How to Win (At ANYTHING)",
+      "url": "https://www.youtube.com/watch?v=MNll1BaskLA"
+    },
+    {
+      "video_id": "Tu6YDG0AZ5k",
+      "title": "\"I'm Facing A Billion Dollar Decision\" [Ep 012]",
+      "url": "https://www.youtube.com/watch?v=Tu6YDG0AZ5k"
+    },
+    {
+      "video_id": "OvEfWrDOfNk",
+      "title": "Why I Don't Go Home for the Holidays",
+      "url": "https://www.youtube.com/watch?v=OvEfWrDOfNk"
+    },
+    {
+      "video_id": "CaiLcj6tzBQ",
+      "title": "The Business Model That\u2019s So Simple, Anyone Can Try It",
+      "url": "https://www.youtube.com/watch?v=CaiLcj6tzBQ"
+    },
+    {
+      "video_id": "U_s0ekwPK5g",
+      "title": "81 Minutes of Money Making Advice You Needed to Know Yesterday",
+      "url": "https://www.youtube.com/watch?v=U_s0ekwPK5g"
+    },
+    {
+      "video_id": "ABOd589OyTM",
+      "title": "My Full Body Workout (with Chris Williamson)",
+      "url": "https://www.youtube.com/watch?v=ABOd589OyTM"
+    },
+    {
+      "video_id": "VBoRLJimVzc",
+      "title": "If I Wanted to Become a Millionaire In 2024, This is What I'd Do [FULL BLUEPRINT]",
+      "url": "https://www.youtube.com/watch?v=VBoRLJimVzc"
+    },
+    {
+      "video_id": "mHrAjWni65E",
+      "title": "How to get rich this Black Friday",
+      "url": "https://www.youtube.com/watch?v=mHrAjWni65E"
+    },
+    {
+      "video_id": "I64gYLBrics",
+      "title": "How to make SO much money it makes you sick",
+      "url": "https://www.youtube.com/watch?v=I64gYLBrics"
+    },
+    {
+      "video_id": "ln24y0FPJHo",
+      "title": "Brutally Honest Advice to My Younger Poorer Self",
+      "url": "https://www.youtube.com/watch?v=ln24y0FPJHo"
+    },
+    {
+      "video_id": "yPDQCfrwh8E",
+      "title": "I Tried This Simple Business Strategy for 60 Days. This is what happened",
+      "url": "https://www.youtube.com/watch?v=yPDQCfrwh8E"
+    },
+    {
+      "video_id": "c_6BrF7jOGk",
+      "title": "I Doubled A Business in 60 Days to Show It's Not Luck (Part 1)",
+      "url": "https://www.youtube.com/watch?v=c_6BrF7jOGk"
+    },
+    {
+      "video_id": "Ktwv_uEW-uA",
+      "title": "\"What now?\" [Ep 009]",
+      "url": "https://www.youtube.com/watch?v=Ktwv_uEW-uA"
     }
   ]
 }
